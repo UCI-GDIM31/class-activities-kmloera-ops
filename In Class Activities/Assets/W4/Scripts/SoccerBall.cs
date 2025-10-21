@@ -21,11 +21,9 @@ public class SoccerBall : MonoBehaviour
     //
     // Also, uncomment and FIX the Debug.Log line.
 
-    //private ?? ??
-    //{
+    private void OnTriggerEnter(Collider collider)
+    {
         // finish STEP 1 by uncommenting and fixing the below line!
-        //Debug.Log(SoccerBall detected a collision with a trigger collider!);
-
         // STEP 2 -------------------------------------------------------------
         // Write an IF STATEMENT to check if the game object we collided with
         //      has the tag "Goal".
@@ -33,10 +31,15 @@ public class SoccerBall : MonoBehaviour
         //
         // Then, move your Debug.Log() statement so that it's only called if
         //      the colliding object has the "Goal" tag.
+        string tag = collider.gameObject.tag;
+        if (tag == "Goal")
+        {
+            MadeGoal();
+        }
 
 
         // STEP 2 -------------------------------------------------------------
-    //}
+    }
 
     // STEP 1 -----------------------------------------------------------------
 
@@ -49,6 +52,24 @@ public class SoccerBall : MonoBehaviour
     // Once you've created MadeGoal,
     //      move your Debug.Log() statement into MadeGoal, and
     //      call MadeGoal from inside your if statement in OnTriggerEnter.
+    private int points = 0;
+    private void MadeGoal()
+    {
+        Debug.Log("SoccerBall detected a collision with a trigger collider!");
+        _goalVFX.Play();
+        points += 1;
+        _pointsText.text = ("points: " + points);
+
+        time_since = 0.0f;
+
+    }
+
+    private float time_since = 0.0f;
+    private void Update()
+    {
+        time_since += Time.deltaTime;
+        _timeText.text = ("time since last goal: " + time_since);
+    }
     
         // STEP 4 -------------------------------------------------------------
         // _goalVFX is a ParticleSystem, a Component for creating VFX.

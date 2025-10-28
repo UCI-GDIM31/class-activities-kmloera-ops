@@ -25,6 +25,13 @@ Line 32: This changes the _isgrounded variable to false showing that the charact
 1. The objects I gave rigid bodies to was the cat and soccerball and I turned the trigger on for the goal.
 2. What I originally had to fix was that I was trying to reset the Time.deltaTime variable to 0 hoping that by assigning my time_since variable would also be reset on a goal but instead I had to reset my time_since variable and add the Time.deltaTime variable so that it could just add the time. So in my MadeGoal method it resets time_since and the Update method adds the time passed from the last frame which helped my timer work correctly.
 
+### W5
+I do not understand why when setting movement.z = 1 means moving in a specific direction and why making it a negative -1 goes in the opposite direction. Why does just changing the value to equal one create movement when plugged into the transform method?
+
+The reason that this works is that the function Vector3 movement = Vector3.zero; sets the xyz values to 0 so when one of them is changed to -1 or 1 then the transform method is performed it multiplies the with them to generate the new coordinates but when multiplied by 0 it does nothing. That’s why when multiplied by 1 or -1 leads to movement depending on the speed of the player and which value is changed.
+
+This class needs a variable for your navmeshagent and then a variable for the location where the gameobject needs to go. Then you create the class with these variables as a SerializeField so that you can add another game object for the target location and add the deer’s NavMeshagent. Then in the start function you are going to use the SetDestination function apart from the Navmeshagent to then use the target location to transform the deer’s position which by using the setdestination function it will move the deer to the location in a walking manner. The method where this will go is just in the Start() method so that when the program starts it will immediately move to the location.
+
 
 ## Open-Source Assets
 ### W1

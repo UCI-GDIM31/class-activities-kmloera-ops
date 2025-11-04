@@ -32,6 +32,13 @@ The reason that this works is that the function Vector3 movement = Vector3.zero;
 
 This class needs a variable for your navmeshagent and then a variable for the location where the gameobject needs to go. Then you create the class with these variables as a SerializeField so that you can add another game object for the target location and add the deer’s NavMeshagent. Then in the start function you are going to use the SetDestination function apart from the Navmeshagent to then use the target location to transform the deer’s position which by using the setdestination function it will move the deer to the location in a walking manner. The method where this will go is just in the Start() method so that when the program starts it will immediately move to the location.
 
+### W6
+Category: Math
+https://docs.google.com/document/d/1_Zwo3XH1VQM32Ym-pGFQQy0nj1sO6sBX9mo0lAvqYQw/edit?usp=sharing
+
+So first create the adjustable speed of the bats and the target as transform then create the start(), update(), bat_start(), and bat_stop() methods. Then with these methods you will place the bat_start() inside the start() method and then in the update() method you will place the bat_stop() method so that it checks when it needs to stop every bat. Within the bat_start() method you will set enable to true and also give them the player location and in the bat_stop() method you will set enable to false.
+
+
 
 ## Open-Source Assets
 ### W1

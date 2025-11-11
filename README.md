@@ -38,6 +38,11 @@ https://docs.google.com/document/d/1_Zwo3XH1VQM32Ym-pGFQQy0nj1sO6sBX9mo0lAvqYQw/
 
 So first create the adjustable speed of the bats and the target as transform then create the start(), update(), bat_start(), and bat_stop() methods. Then with these methods you will place the bat_start() inside the start() method and then in the update() method you will place the bat_stop() method so that it checks when it needs to stop every bat. Within the bat_start() method you will set enable to true and also give them the player location and in the bat_stop() method you will set enable to false.
 
+### W7
+Role: Gameplay
+https://docs.google.com/document/d/1nSQTsrKYDlO6F7FmIx6hmC3CpusIQNMKURDBw7u9siU/edit?usp=sharing
+
+If we are just changing the position of the z.axis then if we rotate it will only move in the original z axis instead of what we have now rotated to. With the translate method it allows us to move in the place we have now rotated to.
 
 
 ## Open-Source Assets
